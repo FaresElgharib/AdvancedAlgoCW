@@ -30,7 +30,7 @@ public class Q1 {
 	public static void main(String[] args) {
 		char[] input = {'a', 'b', 'c', 'a', 'd', 'c', 'e'};
 		char[] result = removeDuplicates(input);
-		System.out.println(Arrays.toString(result)); // prints [a, b, c, d, e]
+		System.out.println(Arrays.toString(result));
 
 	}
 
