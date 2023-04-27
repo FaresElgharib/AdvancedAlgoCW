@@ -6,7 +6,6 @@ import java.util.Set;
 public class Q2 {
 
 	public static boolean sameSet(int[] arr1, int[] arr2) {
-	    // Create two hash sets to store the unique values in the arrays
 	    Set<Integer> set1 = new HashSet<>();
 	    Set<Integer> set2 = new HashSet<>();
 
