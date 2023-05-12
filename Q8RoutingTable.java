@@ -4,10 +4,12 @@ import java.util.*;
 
 public class Q8RoutingTable {
     public static void main(String[] args) {
+        // Running the code
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the number of nodes in the network: ");
         int numNodes = input.nextInt();
         
+        // Reading the connectivity information for each of the nodes
         Map<Character, List<Character>> connectivity = new HashMap<>();
         for (int i = 0; i < numNodes; i++) {
             System.out.print("Enter the connectivity information for node " + (char) ('A' + i) + ": ");
@@ -22,6 +24,7 @@ public class Q8RoutingTable {
             connectivity.get(node).add(neighbor);
         }
         
+        // Building the routing tables for each node
         Map<Character, Map<Character, Character>> routingTables = new HashMap<>();
         for (char node : connectivity.keySet()) {
             Map<Character, Character> routingTable = new HashMap<>();
@@ -42,6 +45,7 @@ public class Q8RoutingTable {
             routingTables.put(node, routingTable);
         }
         
+        // Printing the routing table
         for (char node : routingTables.keySet()) {
             System.out.println("Routing table for node " + node + ":");
             Map<Character, Character> routingTable = routingTables.get(node);
