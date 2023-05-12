@@ -3,38 +3,42 @@ package cw;
 public class TwoColorDoubleStack<T> {
     private int redTop; 
     private int blueTop; 
-    private int capacity; 
-    private T[] arr; 
+    private int capacity; // the size of the array
+    private T[] arr; // the array that stores the elements of both stacks
 
     
     public TwoColorDoubleStack(int capacity) {
         this.capacity = capacity;
         arr = (T[]) new Object[capacity];
-        redTop = -1; 
-        blueTop = capacity; 
+        redTop = -1;  // Setting no elements in the red stack
+        blueTop = capacity; // Setting no elements in the blue stack
     }
 
 
+    // Checking if the Red stack is empty
     public boolean isRedEmpty() {
     	return redTop == -1;
     }
 
-
+    // Checking if the Blue stack is empty
     public boolean isBlueEmpty() {
         return blueTop == capacity;
     }
 
 
+    // Checking if Red stack is full
     public boolean isRedFull() {
         return redTop == blueTop - 1;
     }
 
 
+    // Checking if Blue stack is full
     public boolean isBlueFull() {
         return blueTop == redTop + 1;
     }
 
 
+    // Pushing an element to the Red Stack
     public void redPush(T element) {
         if (isRedFull()) {
             throw new RuntimeException("Red stack is full");
@@ -43,6 +47,7 @@ public class TwoColorDoubleStack<T> {
     }
 
 
+    // Pushing an element to the Blue Stack
     public void bluePush(T element) {
         if (isBlueFull()) {
             throw new RuntimeException("Blue stack is full");
@@ -51,6 +56,7 @@ public class TwoColorDoubleStack<T> {
     }
 
 
+    // Popping an element from the Red Stack
     public T redPop() {
         if (isRedEmpty()) {
             throw new RuntimeException("Red stack is empty");
@@ -59,6 +65,7 @@ public class TwoColorDoubleStack<T> {
     }
 
 
+    // Popping an element from the Blue Stack
     public T bluePop() {
         if (isBlueEmpty()) {
             throw new RuntimeException("Blue stack is empty");
@@ -67,6 +74,7 @@ public class TwoColorDoubleStack<T> {
     }
 
 
+    // Getting the top element from the Red stack
     public T redTop() {
         if (isRedEmpty()) {
             throw new RuntimeException("Red stack is empty");
@@ -75,6 +83,7 @@ public class TwoColorDoubleStack<T> {
     }
 
 
+    // Getting the top element from the Blue stack
     public T blueTop() {
         if (isBlueEmpty()) {
             throw new RuntimeException("Blue stack is empty");
@@ -83,8 +92,10 @@ public class TwoColorDoubleStack<T> {
     }
     
     public static void main(String[] args) {
+    	// Running the code
     	
-    	TwoColorDoubleStack<Integer> stack = new TwoColorDoubleStack<>(10);
+        // Creating the stack
+        TwoColorDoubleStack<Integer> stack = new TwoColorDoubleStack<>(10);
 
 
     	stack.redPush(1);
